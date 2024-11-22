@@ -21,7 +21,7 @@
     background: var(--content-tertiary);
     border-radius: 1rem;
 
-    & button {
+    & button[type="button"] {
       all: unset;
       border-radius: 50%;
       position: absolute;
@@ -46,7 +46,7 @@
     & > span {
       background: var(--gradient-background);
       
-      & button {
+      & button[type="button"] {
         right: 3px;
       }
     }

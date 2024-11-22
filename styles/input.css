@@ -1,4 +1,4 @@
-form fieldset > div {
+form fieldset .inputs {
   display: flex;
   gap: .75rem;
   margin-block: 2.5rem 1.25rem;

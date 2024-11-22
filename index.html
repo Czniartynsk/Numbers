@@ -22,14 +22,28 @@
         <h1>Sorteador<br>de Números</h1>
       </section>
       <section class="sort">
-        <form action="">
+        <!-- <div class="result hide">
+          <h3>Resultado do sorteio</h3>
+          <p>1º Resutado</p>
+          <div>
+            <tag_number>23</tag_number>
+            <tag_number>12</tag_number>
+          </div>
+          <div id="sortear-novamente" class="btn">
+            <div class="btn-content" onclick="sortear()">
+              <span>Sortear novamente</span>
+              <img src="assets/icons/Frame.svg" alt="Sortear novamente.">
+            </div>
+          </div>
+        </div> -->
+        <form action="" class="">
           <fieldset>
             <legend>Quero Sortear:</legend>
             <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
-            <div>
+            <div class="inputs">
               <div class="input-wrapper">
-                <label for="numbers">Números</label>
-                <input type="number" id="numbers" name="numbers" value="2"/>
+                <label for="iterations">Números</label>
+                <input type="number" id="iterations" name="iterations" value="2"/>
               </div>
               <div class="input-wrapper">
                 <label for="from">De</label>
@@ -40,20 +54,20 @@
                 <input type="number" id="to" name="to" value="100" />
               </div>
             </div>
-          </fieldset>
-          <div id="switch" onclick="toggleMode()">
-            <input type="checkbox" name="non-rep" id="non-rep" value="repeat" checked>
-            <span>
-              <button type="button"></button>
-            </span>
-            <label for="non-rep">Não repetir número</label>
-          </div>
-          <div class="btn">
-            <div class="btn-content">
-              <span>Sortear</span>
-              <img src="assets/icons/Frame-1.svg" alt="Sortear.">
+            <div id="switch">
+              <input type="checkbox" name="non-rep" id="non-rep" value="repeat" checked>
+              <span>
+                <button type="button"></button>
+              </span>
+              <label for="non-rep">Não repetir número</label>
             </div>
-          </div>
+            <div id="sortear" class="btn">
+              <button type="submit" class="btn-content" >
+                Sortear
+                <img src="assets/icons/Frame-1.svg" alt="Sortear.">
+              </button>
+            </div>
+          </fieldset>
         </form>
       </section>
       <section class="quest">
@@ -72,6 +86,6 @@
       </section>
     </main>
   </div>
-  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

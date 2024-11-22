@@ -65,3 +65,11 @@ img {
 ul[role="list"] {
   list-style-type: none;
 }
+
+.flex {
+  display: flex;
+}
+
+.text-align{
+  text-align: center;
+}

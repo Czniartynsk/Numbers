@@ -50,10 +50,41 @@
         /* margin-bottom: 2.625rem; */
       }
     }
-
+    
     & .sort {
       grid-area: ST;
       /* width: 20rem; */
+
+
+      /* Quando o botão é clicado e o HTML muda */
+        & .result {
+          display: flex;
+          justify-content: center;
+          margin-block: 2.5rem;
+          /* height: 5.25rem; */
+          gap: 1rem;
+      
+      
+          & .tag-number {
+            background-color: var(--content-brand);
+            height: 5.25rem;
+            width: 5.25rem;
+            border-radius: 1.75rem;
+            
+            position: relative;
+
+            & number-sort {
+              font: var(--overline);
+              font-size: 3rem;
+              color: var(--content-inverse);
+
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
 
       & form fieldset {
         border: none;
@@ -66,11 +97,11 @@
 
         & p {
           font: var(--paragraph-medium);
-          color: var(--content-secondary);
+          color: var(--content-tertiary);
         }
       }
 
-      & form button {
+      & form button[type="button"] {
         all: unset;
         cursor: pointer;
         
@@ -169,6 +200,10 @@
 
     & .sort {
       margin-block: 2.125rem;
+
+      & .result {
+        gap: .25rem;
+      }
 
       & form fieldset p {
         font: var(--paragraph-large);
