@@ -1,6 +1,6 @@
-import { createNumberTag } from "./number-tag.js"
+import { numberTag } from "./number-tag.js"
 
-export function RenderSort(iterations, from, to) {
+export function RenderSort(numbers) {
   // Aqui vai limpar a div dos inputs, então guarda os valores.
   // Remove os elementos (Switch e Botão).
   const fieldset = document.querySelector("fieldset")
@@ -16,14 +16,14 @@ export function RenderSort(iterations, from, to) {
   // setTimeout(
   legend.textContent = "Resultado do sorteio"
     // , 2000)
-  legend.classList.add("text-align")
+  legend.classList.add("text-align", "show")
   
   // Altera o conteúdo do parágrafo.
   const paragraph = document.querySelector("p")
   // setTimeout(
   paragraph.textContent = "1º RESULTADO"
     // , 2000)
-  paragraph.classList.add("text-align")
+  paragraph.classList.add("text-align", "show")
 
   // Limpa a div em que vão os números gerados.
   const container = fieldset.querySelector("& > div")
@@ -33,27 +33,12 @@ export function RenderSort(iterations, from, to) {
   // Altera a classe para o CSS
   container.classList.add("result")
   
-  // Chama função que cria os elementos de tag dos números.
-  //Aqui usa o itarations
-  for (let i = 0; i<iterations; i++) {
-    // if (i>1) {
-    //   paragraph.textContent = `${i}º RESULTADO`
-    // }
-
-    container.appendChild(new createNumberTag(i, from, to))
-
-    // setTimeout(, 3000)
-
-    // console.log("passou", i)
-  }
-
-  
-  
-  
-
-  
-
-
+  // Cria os elementos de tag dos números do array recebido.
+  let i = 0
+  for (let number of numbers) {
+    i++
+    container.appendChild(new numberTag(number, i))
+  } 
   
   // Cria o novo botão que chamará a função de sortear novamente.
   const imgButton = document.createElement("img")

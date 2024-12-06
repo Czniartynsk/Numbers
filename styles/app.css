@@ -59,6 +59,7 @@
       /* Quando o botão é clicado e o HTML muda */
         & .result {
           display: flex;
+          flex-wrap: wrap;
           justify-content: center;
           margin-block: 2.5rem;
           /* height: 5.25rem; */
@@ -70,13 +71,19 @@
             height: 5.25rem;
             width: 5.25rem;
             border-radius: 1.75rem;
+
+            opacity: 0;
             
             position: relative;
+
+            /* animation: loading 1s var(--delay) forwards; */
 
             & number-sort {
               font: var(--overline);
               font-size: 3rem;
               color: var(--content-inverse);
+
+              opacity: 0;
 
               position: absolute;
               top: 50%;
@@ -94,7 +101,7 @@
           margin-bottom: 2px;
           text-transform: uppercase;
         }
-
+        
         & p {
           font: var(--paragraph-medium);
           color: var(--content-tertiary);
@@ -218,5 +225,23 @@
         width: 358px;
       }
     }
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
